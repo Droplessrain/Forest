@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002-insert-trees-data
+      author: developer
+      changes:
+        - insert:
+            tableName: trees
+            columns:
+              - column:
+                  name: id
+                  value: 1
+              - column:
+                  name: name
+                  value: "Сосна"
+              - column:
+                  name: age
+                  value: 25
+        - insert:
+            tableName: trees
+            columns:
+              - column:
+                  name: id
+                  value: 2
+              - column:
+                  name: name
+                  value: "Липа"
+              - column:
+                  name: age
+                  value: 30
+        - insert:
+            tableName: trees
+            columns:
+              - column:
+                  name: id
+                  value: 3
+              - column:
+                  name: name
+                  value: "Осина"
+              - column:
+                  name: age
+                  value: 40

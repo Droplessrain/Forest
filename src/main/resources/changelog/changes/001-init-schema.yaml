@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-init-schema
+      author: developer
+      changes:
+        - createTable:
+            tableName: trees
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: age
+                  type: INTEGER
