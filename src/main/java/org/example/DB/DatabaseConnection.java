@@ -1,15 +1,23 @@
 package org.example.DB;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static final String URL = "jdbc:postgresql://localhost:5432/forest_db";
-    private static final String USER = "postgres";
-    private static final String PASSWORD = "*********";
 
-    public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL, USER, PASSWORD);
+    @Value("${spring.datasource.url}")
+    private String url;
+
+    @Value("${spring.datasource.username}")
+    private String USER;
+
+    @Value("${spring.datasource.password}")
+    private String PASSWORD;
+
+    public Connection getConnection() throws SQLException {
+        return DriverManager.getConnection(url, USER, PASSWORD);
     }
 }
